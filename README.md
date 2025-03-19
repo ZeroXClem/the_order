@@ -1,6 +1,6 @@
 # The Order - Cosmic Flavor Rebellion Landing Page
 
-![The Order Banner](https://i.imgur.com/VCRGBLu.png)
+![The Order Banner](https://i.imgur.com/eUe8bGU.png)
 
 ## Overview
 
