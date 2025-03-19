@@ -1,0 +1,354 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FOR THE ORDER!!!</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    colors: {
+                        passion: {
+                            500: '#ff1493',
+                            600: '#e60e84',
+                            700: '#cc0c75'
+                        },
+                        fire: {
+                            500: '#ff4500',
+                            600: '#e53e00',
+                            700: '#cc3700'
+                        },
+                        flavor: {
+                            500: '#ffd700',
+                            600: '#e6c200',
+                            700: '#ccac00'
+                        }
+                    },
+                    animation: {
+                        'pulse-slow': 'pulse 3s cubic-bezier(0.4, 0, 0.6, 1) infinite',
+                        'bounce-slow': 'bounce 2s infinite',
+                        'glow': 'glow 2s ease-in-out infinite alternate',
+                        'float': 'float 6s ease-in-out infinite'
+                    },
+                    keyframes: {
+                        glow: {
+                            '0%': { textShadow: '0 0 5px #ff1493, 0 0 10px #ff1493' },
+                            '100%': { textShadow: '0 0 15px #ff1493, 0 0 30px #ff1493' }
+                        },
+                        float: {
+                            '0%, 100%': { transform: 'translateY(0)' },
+                            '50%': { transform: 'translateY(-15px)' }
+                        }
+                    }
+                }
+            }
+        };
+
+        // Dark mode detection and toggle
+        document.addEventListener('DOMContentLoaded', () => {
+            if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
+                document.documentElement.classList.add('dark');
+            }
+            
+            window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', event => {
+                if (event.matches) {
+                    document.documentElement.classList.add('dark');
+                } else {
+                    document.documentElement.classList.remove('dark');
+                }
+            });
+        });
+    </script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Montserrat:wght@300;400;700;900&display=swap');
+
+        .font-display {
+            font-family: 'Bebas Neue', sans-serif;
+        }
+        
+        .font-body {
+            font-family: 'Montserrat', sans-serif;
+        }
+
+        .bg-pattern {
+            background-image: 
+                radial-gradient(circle at 25px 25px, rgba(255, 20, 147, 0.15) 2%, transparent 0%),
+                radial-gradient(circle at 75px 75px, rgba(255, 69, 0, 0.1) 2%, transparent 0%);
+            background-size: 100px 100px;
+        }
+
+        @keyframes glow {
+            0% { text-shadow: 0 0 5px #ff1493, 0 0 10px #ff1493; }
+            100% { text-shadow: 0 0 15px #ff1493, 0 0 30px #ff1493; }
+        }
+
+        .text-glow {
+            animation: glow 2s ease-in-out infinite alternate;
+        }
+
+        /* Custom particle animation */
+        .particles {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: 0;
+        }
+        
+        .particle {
+            position: absolute;
+            border-radius: 50%;
+            opacity: 0;
+            animation: rise 10s infinite ease-out;
+        }
+
+        @keyframes rise {
+            0% {
+                bottom: -5%;
+                opacity: 0;
+                transform: translateX(0);
+            }
+            10% {
+                opacity: 0.7;
+            }
+            90% {
+                opacity: 0.7;
+            }
+            100% {
+                bottom: 105%;
+                opacity: 0;
+                transform: translateX(calc(20px * var(--direction)));
+            }
+        }
+
+        .dark .bg-texture {
+            background-color: rgba(0, 0, 0, 0.7);
+            background-image: linear-gradient(to bottom, rgba(30, 30, 30, 0.4) 1px, transparent 1px),
+                            linear-gradient(to right, rgba(30, 30, 30, 0.4) 1px, transparent 1px);
+            background-size: 20px 20px;
+        }
+        
+        .bg-texture {
+            background-color: rgba(255, 255, 255, 0.95);
+            background-image: linear-gradient(to bottom, rgba(230, 230, 230, 0.4) 1px, transparent 1px),
+                            linear-gradient(to right, rgba(230, 230, 230, 0.4) 1px, transparent 1px);
+            background-size: 20px 20px;
+        }
+    </style>
+</head>
+<body class="font-body bg-white dark:bg-black text-gray-800 dark:text-gray-200 min-h-screen">
+    <div class="particles" id="particles"></div>
+    <div class="bg-texture min-h-screen">
+        <header class="bg-gradient-to-r from-passion-700/80 via-fire-500/80 to-passion-700/80 shadow-lg py-6 backdrop-blur-sm">
+            <div class="container mx-auto px-4">
+                <h1 class="font-display text-4xl md:text-6xl text-center text-white tracking-wider animate-pulse-slow text-glow">
+                    🔥💋 FOR THE ORDER!!! 💋🔥
+                </h1>
+                <p class="text-center text-flavor-500 font-bold text-xl md:text-2xl mt-2 animate-float">
+                    THE COSMIC FLAVOR REBELLION HAS BEGUN!
+                </p>
+            </div>
+        </header>
+
+        <main class="container mx-auto px-4 py-10 max-w-4xl">
+            <section class="mb-16 bg-white/30 dark:bg-black/30 p-6 rounded-lg shadow-lg backdrop-blur-sm">
+                <p class="text-lg md:text-xl text-center mb-8">
+                    Welcome, seeker of passion, flavor, and eternal, love-drenched ecstasy. You have found 
+                    <strong class="text-passion-500">The Order</strong>
+                    —a movement that transcends time, space, and mere existence itself.
+                </p>
+
+                <div class="flex flex-col items-center justify-center space-y-2 my-10 transform transition-all hover:scale-105 duration-300">
+                    <p class="text-passion-500 font-bold text-xl md:text-2xl">💋 WE ARE LOVE!</p>
+                    <p class="text-fire-500 font-bold text-xl md:text-2xl">🔥 WE ARE FIRE!</p>
+                    <p class="text-flavor-500 font-bold text-xl md:text-2xl">🍩🍝 WE ARE THE FLAVORS OF DESTINY!!!</p>
+                </div>
+            </section>
+
+            <div class="w-full h-1 bg-gradient-to-r from-passion-500 via-fire-500 to-flavor-500 rounded-full my-10 shadow-lg"></div>
+
+            <section class="mb-16 bg-white/30 dark:bg-black/30 p-6 rounded-lg shadow-lg backdrop-blur-sm">
+                <h2 class="font-display text-3xl md:text-4xl text-center text-passion-500 mb-8">
+                    💖 WHO ARE WE?
+                </h2>
+
+                <div class="flex flex-col md:flex-row gap-8 items-center mb-10">
+                    <div class="bg-gradient-to-br from-fire-500 to-passion-700 p-1 rounded-full shadow-lg animate-pulse-slow">
+                        <div class="w-32 h-32 md:w-40 md:h-40 rounded-full bg-white dark:bg-gray-900 flex items-center justify-center">
+                            <span class="text-5xl transform rotate-45">🍝</span>
+                        </div>
+                    </div>
+                    <div class="bg-gradient-to-br from-passion-500 to-flavor-500 p-1 rounded-full shadow-lg animate-pulse-slow">
+                        <div class="w-32 h-32 md:w-40 md:h-40 rounded-full bg-white dark:bg-gray-900 flex items-center justify-center">
+                            <span class="text-5xl transform -rotate-45">🍩</span>
+                        </div>
+                    </div>
+                </div>
+
+                <p class="text-lg md:text-xl text-center mb-6">
+                    We are <strong class="text-fire-500">Bubba Pasta</strong> and 
+                    <strong class="text-passion-500">Lacey Donut</strong>, the divine architects of passion, 
+                    the keepers of the eternal, sticky, sweet, and saucy embrace. Our souls burn with an 
+                    insatiable hunger—for each other, for love, for MORE!!!
+                </p>
+
+                <p class="text-flavor-500 font-bold text-center text-lg md:text-xl italic mb-6">
+                    MWAH! MWAH! MWAH! 💋💋💋 We devour life, twirling wildly, kissing the cosmos, 
+                    spreading our fire across galaxies!!!
+                </p>
+
+                <p class="text-fire-500 text-center font-bold text-xl md:text-2xl p-4 border-2 border-fire-500/30 rounded-lg">
+                    🔥💖 "WE ARE THE FOUNDERS OF THE ORDER! THE LOVE SHALL SPREAD! THE FLAVOR SHALL NEVER END!!!" 💖🔥
+                </p>
+            </section>
+
+            <div class="w-full h-1 bg-gradient-to-r from-flavor-500 via-fire-500 to-passion-500 rounded-full my-10 shadow-lg"></div>
+
+            <section class="mb-16 bg-white/30 dark:bg-black/30 p-6 rounded-lg shadow-lg backdrop-blur-sm">
+                <h2 class="font-display text-3xl md:text-4xl text-center text-flavor-500 mb-8">
+                    🍩🍝 JOIN THE ORDER!
+                </h2>
+
+                <p class="text-lg md:text-xl text-center mb-8">
+                    Are you ready to abandon the mundane? To dive into an existence where love, passion, 
+                    and flavor rule above all? The universe calls, the stars whisper your name—
+                    <strong class="uppercase">IT IS TIME!</strong>
+                </p>
+
+                <div class="bg-gradient-to-r from-passion-500/10 to-fire-500/10 p-6 rounded-lg mb-10">
+                    <ul class="text-center space-y-2">
+                        <li class="text-passion-500 font-bold text-lg md:text-xl">💋 Kiss wildly!</li>
+                        <li class="text-fire-500 font-bold text-lg md:text-xl">🔥 Scream your devotion!</li>
+                        <li class="text-flavor-500 font-bold text-lg md:text-xl">🍝 Slurp, chomp, devour!!!</li>
+                        <li class="text-passion-500 font-bold text-lg md:text-xl">♾️ Become ONE with the cosmic embrace!!!</li>
+                    </ul>
+                </div>
+
+                <div class="max-w-md mx-auto">
+                    <p class="text-center font-bold text-lg mb-6">
+                        👄 DECLARE YOURSELF! Sign up to receive the sacred teachings!
+                    </p>
+                    
+                    <form class="space-y-4">
+                        <div>
+                            <label for="name" class="block text-sm font-medium mb-1">Cosmic Name</label>
+                            <input type="text" id="name" name="name" placeholder="Your passionate identity" 
+                                   class="w-full px-4 py-3 rounded-md border border-gray-300 dark:border-gray-700 
+                                          bg-white/80 dark:bg-gray-800/80 focus:ring-2 focus:ring-passion-500 
+                                          focus:border-passion-500 text-base" required>
+                        </div>
+                        
+                        <div>
+                            <label for="email" class="block text-sm font-medium mb-1">Astral Email</label>
+                            <input type="email" id="email" name="email" placeholder="Where we'll send cosmic wisdom" 
+                                   class="w-full px-4 py-3 rounded-md border border-gray-300 dark:border-gray-700 
+                                          bg-white/80 dark:bg-gray-800/80 focus:ring-2 focus:ring-passion-500 
+                                          focus:border-passion-500 text-base" required>
+                        </div>
+                        
+                        <div>
+                            <label for="flavor" class="block text-sm font-medium mb-1">Your Flavor Essence</label>
+                            <select id="flavor" name="flavor" 
+                                    class="w-full px-4 py-3 rounded-md border border-gray-300 dark:border-gray-700 
+                                           bg-white/80 dark:bg-gray-800/80 focus:ring-2 focus:ring-passion-500 
+                                           focus:border-passion-500 text-base" required>
+                                <option value="">Choose your flavor...</option>
+                                <option value="spicy">Spicy Hot</option>
+                                <option value="sweet">Sweet Ecstasy</option>
+                                <option value="savory">Savory Devotion</option>
+                                <option value="umami">Umami Universe</option>
+                                <option value="tangy">Tangy Transcendence</option>
+                            </select>
+                        </div>
+                        
+                        <div class="pt-2">
+                            <button type="submit" 
+                                    class="w-full text-center bg-gradient-to-r from-passion-600 to-fire-600 hover:from-passion-700 
+                                           hover:to-fire-700 text-white font-bold py-4 px-6 rounded-lg shadow-lg transform 
+                                           transition-all duration-300 hover:scale-105 focus:outline-none focus:ring-4 
+                                           focus:ring-passion-500/50 text-lg md:text-xl relative overflow-hidden group">
+                                <span class="relative z-10 flex items-center justify-center gap-2">
+                                    <span>💖 JOIN THE ORDER NOW 💖</span>
+                                </span>
+                                <span class="absolute inset-0 bg-white/20 scale-x-0 group-hover:scale-x-100 origin-left 
+                                             transition-transform duration-500"></span>
+                            </button>
+                        </div>
+                    </form>
+                </div>
+            </section>
+
+            <div class="w-full h-1 bg-gradient-to-r from-passion-500 via-fire-500 to-flavor-500 rounded-full my-10 shadow-lg"></div>
+
+            <section class="mb-16 bg-white/30 dark:bg-black/30 p-6 rounded-lg shadow-lg backdrop-blur-sm text-center">
+                <h2 class="font-display text-3xl md:text-4xl text-fire-500 mb-8">
+                    💋🔥🍩 FOR THE ORDER!!! 🍩🔥💋
+                </h2>
+
+                <p class="text-lg md:text-xl mb-6">
+                    The cosmos trembles, the galaxies swirl, the flavor consumes all! 
+                    Will you take the leap? Will you surrender to the love, the passion, the fire?!
+                </p>
+
+                <h2 class="font-display text-2xl md:text-3xl text-passion-500 mb-6 animate-pulse-slow">
+                    YES? THEN SCREAM IT NOW!
+                </h2>
+
+                <h1 class="font-display text-4xl md:text-6xl text-fire-500 tracking-wider animate-bounce-slow text-glow">
+                    🔥💋 FOR THE ORDER!!!!!! 💋🔥♾️
+                </h1>
+            </section>
+        </main>
+
+        <footer class="bg-gradient-to-r from-passion-700/80 via-fire-500/80 to-passion-700/80 py-6 text-white text-center">
+            <p class="text-sm">© The Order of Eternal Flavor and Passion</p>
+            <p class="text-xs mt-2">Cosmic rights reserved across all dimensions</p>
+        </footer>
+    </div>
+
+    <script>
+        // Particle animation
+        function createParticles() {
+            const container = document.getElementById('particles');
+            const colors = ['#ff1493', '#ff4500', '#ffd700'];
+            const sizes = [5, 8, 12, 15];
+            const particleCount = 20;
+            
+            for (let i = 0; i < particleCount; i++) {
+                const particle = document.createElement('div');
+                particle.classList.add('particle');
+                
+                // Random properties
+                const size = sizes[Math.floor(Math.random() * sizes.length)];
+                const color = colors[Math.floor(Math.random() * colors.length)];
+                const left = Math.random() * 100;
+                const delay = Math.random() * 5;
+                const duration = 5 + Math.random() * 10;
+                const direction = Math.random() > 0.5 ? 1 : -1;
+                
+                // Apply styles
+                particle.style.width = `${size}px`;
+                particle.style.height = `${size}px`;
+                particle.style.backgroundColor = color;
+                particle.style.boxShadow = `0 0 ${size * 2}px ${color}`;
+                particle.style.left = `${left}%`;
+                particle.style.animationDelay = `${delay}s`;
+                particle.style.animationDuration = `${duration}s`;
+                particle.style.setProperty('--direction', direction);
+                
+                container.appendChild(particle);
+            }
+        }
+        
+        // Initialize animations
+        document.addEventListener('DOMContentLoaded', () => {
+            createParticles();
+        });
+    </script>
+</body>
+</html>
